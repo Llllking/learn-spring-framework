@@ -1,6 +1,6 @@
 package com.ismail.learn_spring_framework;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,12 +11,9 @@ class myBusinessClass {
     private Dependency1 dependency1;
     private Dependency2 dependency2;
 
-    @Autowired
-    public void setDependency1(Dependency1 dependency1) {
+    //with @Autowired or without it dependency 1 and 2 get injected this is why its preferred to use constructor injection
+    public myBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
         this.dependency1 = dependency1;
-    }
-    @Autowired
-    public void setDependency2(Dependency2 dependency2) {
         this.dependency2 = dependency2;
     }
 
