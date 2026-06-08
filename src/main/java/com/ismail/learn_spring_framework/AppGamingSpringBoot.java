@@ -7,7 +7,7 @@ public class AppGamingSpringBoot {
     static void main(String[] args) {
         try (var context =
                      new AnnotationConfigApplicationContext
-                             (AppGamingConfiguration.class)){
+                             (AppGamingSpringBoot.class)){
             context.getBean(GameRunner.class).run();
         }
 
