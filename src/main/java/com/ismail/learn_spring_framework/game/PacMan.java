@@ -1,5 +1,8 @@
 package com.ismail.learn_spring_framework.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacMan implements GamingConsole{
     public void up(){
         System.out.println("Jump");
