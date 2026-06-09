@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 @Configuration
 @ComponentScan
-public class SimpleSpringContextLauncherApplication {
+public class App02HelloWorldSpring {
 
     static void main(String[] args) {
         try (var context =
                      new AnnotationConfigApplicationContext
-                             (SimpleSpringContextLauncherApplication.class)){
-            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+                             (HelloWorldConfiguration.class)){
+            System.out.println(context.getBean("name"));
         }
 
 
