@@ -10,13 +10,14 @@ import java.util.Arrays;
 
 @Configuration
 @ComponentScan
-public class SimpleSpringContextLauncherApplication {
+public class myApp {
 
     static void main(String[] args) {
         try (var context =
                      new AnnotationConfigApplicationContext
-                             (SimpleSpringContextLauncherApplication.class)){
-            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+                             (myApp.class)){
+            var businessCalculationService = context.getBean(BusinessCalculationService.class);
+            System.out.println(businessCalculationService.findMax());
         }
 
 
