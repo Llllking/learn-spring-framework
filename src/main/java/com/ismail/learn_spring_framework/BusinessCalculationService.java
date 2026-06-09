@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class BusinessCalculationService {
     private DataService dataService;
 
-    public BusinessCalculationService(@Qualifier("MySQLDataServiceQualifier") DataService dataService){
+    public BusinessCalculationService(@Qualifier("mySQLDataService") DataService dataService){
         this.dataService = dataService;
     }
 
