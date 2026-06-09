@@ -16,9 +16,15 @@ public class App02HelloWorldSpring {
         try (var context =
                      new AnnotationConfigApplicationContext
                              (HelloWorldConfiguration.class)){
-            System.out.println(context.getBean("name") + " " + context.getBean("age"));
+            //System.out.println(context.getBean("name") + " " + context.getBean("age"));
             System.out.println(context.getBean("person"));
-            System.out.println(context.getBean("address"));
+            //System.out.println(context.getBean("myAddress"));
+            System.out.println(context.getBean(Address.class));
+            //System.out.println(context.getBean("person2MethodCall"));
+            System.out.println(context.getBean("person3Parameters"));
+            var beans = context.getBeanDefinitionNames();
+            Arrays.stream(beans).forEach(System.out::println);
+
         }
 
 
